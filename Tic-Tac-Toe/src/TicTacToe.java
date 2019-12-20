@@ -517,12 +517,19 @@ public class TicTacToe {
 		button_7.setBounds(241, 168, 66, 60);
 		frame.getContentPane().add(button_7);
 		
-		JLabel lblTicTacToe = new JLabel("Tic Tac Toe");
-		lblTicTacToe.setBounds(189, 13, 56, 16);
+		JLabel lblTicTacToe = new JLabel("Tic Tac Toe 1 v 1");
+		lblTicTacToe.setBounds(154, 13, 135, 16);
 		frame.getContentPane().add(lblTicTacToe);
 		
 		JButton btnComputer = new JButton("COMPUTER");
-		btnComputer.setBounds(8, 54, 97, 25);
+		btnComputer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				TicTacToeCPU newUser = new TicTacToeCPU();
+				newUser.get().setVisible(true);
+			}
+		});
+		btnComputer.setBounds(8, 54, 108, 25);
 		frame.getContentPane().add(btnComputer);
 		
 		
